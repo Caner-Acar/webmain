@@ -592,7 +592,6 @@ span {
     color: var(--main-color);
 }
 
-
 .references {
     padding: 10rem 12% 10rem;
     background: var(--second-bg-color);
@@ -628,16 +627,25 @@ span {
 .reference-item:hover img {
     transform: scale(1.05);
 }
-/* Mevcut Stilleriniz */
-/* Burada sizin verdiğiniz tüm CSS kuralları yer almalıdır. Örneğin: */
 
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
+/* Medya Sorguları */
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .home {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .home-img {
+        width: 80rem;
+        height: 50rem;
+    }
 }
-/* Tüm diğer stil tanımlamalarınız... */
 
-/* Mobil Cihazlar için Medya Sorguları */
 @media (max-width: 768px) {
     html {
         font-size: 50%;
@@ -645,15 +653,27 @@ body {
 
     .header {
         padding: 2rem 5%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .logo {
         font-size: 2rem;
     }
 
+    .navbar {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+    }
+
     .navbar a {
         font-size: 1.5rem;
         margin-left: 1rem;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
     }
 
     .home {
@@ -661,56 +681,109 @@ body {
         gap: 5rem;
     }
 
-    .home-content, .home-img {
+    .home-content,
+    .home-img {
         width: 100%;
         text-align: center;
     }
 
-    .home-content {
-        order
+    .home-img {
+        height: auto;
+    }
 
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        
-            .navbar {
-                width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        
-            .navbar a {
-                padding: 10px;
-                width: 100%;
-                text-align: left;
-            }
-        
-            .home {
-                flex-direction: column;
-            }
-        
-            .home-content,
-            .home-img {
-                width: 100%;
-            }
-        
-            .home-img img {
-                width: 100%;
-            }
-        
-            .testimonials {
-                padding: 20px;
-            }
-        
-            .testimonial-container {
-                flex-direction: column;
-            }
-        
-            .testimonial-item {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-        
+    .home-img img {
+        width: 100%;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #menu-icon.active + .navbar {
+        display: flex;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+    .testimonial-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .references {
+        padding: 5rem 5%;
+    }
+
+    .reference-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 45%;
+    }
+
+    .header {
+        padding: 1rem 2%;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .navbar a {
+        font-size: 1.4rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-content h3 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.4rem;
+    }
+
+    .home-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .heading {
+        font-size: 5rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-content p {
+        font-size: 1.4rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services-box .service-info {
+        padding: 2rem;
+    }
+
+    .service-info h4 {
+        font-size: 2.5rem;
+    }
+
+    .service-info p {
+        font-size: 1.4rem;
+    }
+
+    .testimonial-item {
+        flex-basis: 100%;
+    }
+}
